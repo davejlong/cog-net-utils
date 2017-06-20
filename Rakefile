@@ -45,13 +45,13 @@ task :readme do |_t|
     In chat:
 
     ```
-    @cog bundle install jumpcloud
+    @cog bundle install #{name}
     ```
 
     Via cogctl:
 
     ```
-    cogctl bundle install jumpcloud
+    cogctl bundle install #{name}
     ```
 
     For more details about how to install and configure bundles see:

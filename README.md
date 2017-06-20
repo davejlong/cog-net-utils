@@ -7,13 +7,13 @@
 In chat:
 
 ```
-@cog bundle install jumpcloud
+@cog bundle install net
 ```
 
 Via cogctl:
 
 ```
-cogctl bundle install jumpcloud
+cogctl bundle install net
 ```
 
 For more details about how to install and configure bundles see:
