@@ -17,7 +17,7 @@ if [ "$COG_OPT_PORT" != "" ]; then
 fi
 
 # Set template to use for rendering output
-echo "COG_TEMPLATE: dig"
+echo "COG_TEMPLATE: net"
 
 # Run the whois command.
 result="$(whois "${arguments[@]}" "$COG_ARGV_0")"

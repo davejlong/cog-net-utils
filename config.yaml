@@ -2,12 +2,12 @@
 cog_bundle_version: 4
 name: net
 description: "Simple network utilities"
-author: "Operable <support@operable.io>"
+author: "Dave Long <dlong@cagedata.com>"
 homepage: "https://github.com/cogcmd/net"
-version: "0.3.3"
+version: "0.3.4"
 docker:
-  image: "cogcmd/net"
-  tag: "0.3.3"
+  image: "davejlong/cog-net"
+  tag: "0.3.4"
 commands:
   dig:
     executable: "/bundle/dig.sh"
@@ -18,7 +18,7 @@ commands:
       be a complete "dig in chat" tool.
     arguments: "<target>"
     rules:
-      - "when command is net:dig allow"
+      - allow
     options:
       short:
         description: "Return a terse answer. Verbose reply is the default"
@@ -43,7 +43,7 @@ commands:
       Simple wrapper for the `whois` command line utility.
     arguments: "<domain>"
     rules:
-      - "when command is net:whois allow"
+      - allow
     options:
       server:
         description: "Whois server to query against."
@@ -57,8 +57,36 @@ commands:
         description: "Returns a terse answer only containing contact information"
         type: bool
         required: false
+  ping:
+    executable: "/bundle/ping.sh"
+    description: "PING utility"
+    long_description: |
+      Simple wrapper for the `ping` command line utility. Only a select
+      few options are exposed in this command; it is not intended to
+      be a complete "ping in chat" tool.
+    arguments: "<target>"
+    rules:
+      - allow
+    options:
+      count:
+        description: "Number of times to ping.  Defaults to 5"
+        type: string
+        required: false
+  nslookup:
+    executable: "/bundle/nslookup.sh"
+    description: "Query internet name servers interactively"
+    long_description: |
+      Simple wrapper for the `nslookup` command line utility.
+    arguments: "<target>"
+    rules:
+      - allow
+    options:
+      server:
+        description: "The server to use as source for nslookup."
+        type: string
+        required: false
 templates:
-  dig:
+  net:
     body: |
       ~each var=$results~
       ```

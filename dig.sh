@@ -24,7 +24,7 @@ if [ "$COG_OPT_SERVER" != "" ] ; then
 fi
 
 # Set template to use for rendering output
-echo "COG_TEMPLATE: dig"
+echo "COG_TEMPLATE: net"
 
 # Run the dig command. The results will be sent back as individual
 # lines and Cog will wrap them in an array under a key named body
