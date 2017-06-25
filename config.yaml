@@ -4,10 +4,10 @@ name: net
 description: "Simple network utilities"
 author: "Dave Long <dlong@cagedata.com>"
 homepage: "https://github.com/cogcmd/net"
-version: "0.3.4"
+version: "0.4.3"
 docker:
   image: "davejlong/cog-net"
-  tag: "0.3.4"
+  tag: "0.4.3"
 commands:
   dig:
     executable: "/bundle/dig.sh"
@@ -85,6 +85,12 @@ commands:
         description: "The server to use as source for nslookup."
         type: string
         required: false
+  isup:
+    executable: "/bundle/isup.sh"
+    description: "Check if a website is up or not"
+    arguments: "<target>"
+    rules:
+      - allow
 templates:
   net:
     body: |
@@ -94,4 +100,17 @@ templates:
       ~$l~
       ~end~
       ```
+      ~end~
+  isup:
+    body: |
+      ~each var=$results~
+      ~if cond=$item.status_code == 1~
+      ~$item.domain~ is up
+      ~end~
+      ~if cond=$item.status_code == 2~
+      ~$item.domain~ is down
+      ~end~
+      ~if cond=$item.status_code == 3~
+      ~$item.domain~ is invalid
+      ~end~
       ~end~

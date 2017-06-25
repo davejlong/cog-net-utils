@@ -1,4 +1,4 @@
-# net - Simple network utilities (0.3.3)
+# net - Simple network utilities (0.4.3)
 
 
 
@@ -31,3 +31,12 @@ about each command see the `help` builtin command: `help net:<command_name>`.
 
 * `whois`
   > Whois query utility
+
+* `ping`
+  > PING utility
+
+* `nslookup`
+  > Query internet name servers interactively
+
+* `isup`
+  > Check if a website is up or not

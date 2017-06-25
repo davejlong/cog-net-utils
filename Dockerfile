@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk -U add bind-tools bash
+RUN apk -U add bind-tools bash curl
 
 RUN mkdir /bundle
 WORKDIR /bundle
