@@ -1,4 +1,4 @@
-# net - Simple network utilities (0.4.3)
+# net-utils - Simple network utilities (1.0.0)
 
 
 
@@ -7,13 +7,13 @@
 In chat:
 
 ```
-@cog bundle install net
+@cog bundle install net-utils
 ```
 
 Via cogctl:
 
 ```
-cogctl bundle install net
+cogctl bundle install net-utils
 ```
 
 For more details about how to install and configure bundles see:
@@ -24,7 +24,7 @@ For more details about how to install and configure bundles see:
 ## Commands
 
 The following commands are included with the bundle. For usage info
-about each command see the `help` builtin command: `help net:<command_name>`.
+about each command see the `help` builtin command: `help net-utils:<command_name>`.
 
 * `dig`
   > DNS lookup utility
