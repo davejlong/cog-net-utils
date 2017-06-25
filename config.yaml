@@ -105,12 +105,12 @@ templates:
     body: |
       ~each var=$results~
       ~if cond=$item.status_code == 1~
-      ~$item.domain~ is up
+      ~$item.domain~ is **UP**
       ~end~
       ~if cond=$item.status_code == 2~
-      ~$item.domain~ is down
+      ~$item.domain~ is **DOWN**
       ~end~
       ~if cond=$item.status_code == 3~
-      ~$item.domain~ is invalid
+      ~$item.domain~ is **INVALID**
       ~end~
       ~end~
