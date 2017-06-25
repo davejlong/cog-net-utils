@@ -3,11 +3,11 @@ cog_bundle_version: 4
 name: net-utils
 description: "Simple network utilities"
 author: "Dave Long <dlong@cagedata.com>"
-homepage: "https://github.com/cogcmd/net"
-version: "1.0.0"
+homepage: "https://github.com/davejlong/cog-net-utils"
+version: "1.0.1"
 docker:
   image: "davejlong/cog-net"
-  tag: "1.0.0"
+  tag: "1.0.1"
 commands:
   dig:
     executable: "/bundle/dig.sh"
