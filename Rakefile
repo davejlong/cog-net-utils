@@ -25,7 +25,7 @@ end
 
 task install: [:push] do |_t|
   sh 'cogctl', 'bundle', 'install', 'config.yaml', '--enable', '--relay-group',
-     'default', '--force'
+    'default', '--force'
 end
 
 task :readme do |_t|
@@ -33,6 +33,7 @@ task :readme do |_t|
   description      = BUNDLE_CONFIG['description']
   version          = BUNDLE_CONFIG['version']
   long_description = BUNDLE_CONFIG['long_description']
+  env              = BUNDLE_CONFIG.fetch('config', {}).fetch('env', []).map { |e| "* `#{e['var']}`\n  > #{e['description']}" }.join("\n\n")
   commands         = BUNDLE_CONFIG['commands'].map { |n, c| "* `#{n}`\n  > #{c['description']}" }.join("\n\n")
 
   readme = <<~END
